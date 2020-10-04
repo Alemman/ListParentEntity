@@ -15,16 +15,17 @@ public class Student {
         this.name = name;
     }
 
-<<<<<<< HEAD
-    public boolean equals(Student obj) {
-=======
-    public boolean equals(Object obj) {
->>>>>>> 3363f1ee76210d7c4eac8ba15eb12e59ecbc7c20
-        if (!(obj instanceof Student)) {
-            return false;
-        }
-        Student otherStudent = (Student) obj;
 
-        return this.name.equals(otherStudent.name);
-    }
+
+
+        public boolean equals (Object obj){
+
+            if (!(obj instanceof Student)) {
+                return false;
+            }
+            Student otherStudent = (Student) obj;
+
+            return this.name.equals(otherStudent.name);
+        }
+
 }
