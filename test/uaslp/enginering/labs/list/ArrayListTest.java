@@ -276,7 +276,7 @@ public class ArrayListTest {
         ArrayList<Student> arrayList = new ArrayList<>();
 
         // When:
-        ArrayList<Student>.Iterator iterator = arrayList.getIterator();
+        uaslp.enginering.labs.list.Iterator iterator = arrayList.getIterator();
 
         // Then:
         assertNotNull(iterator);
@@ -287,12 +287,12 @@ public class ArrayListTest {
     @Test
     public void givenListWithOneElement_whenGetIterator_thenIteratorHasOneNext(){
         // Given:
-        ArrayList<Student> arrayList = new ArrayList<>();
+        List arrayList = new ArrayList<>();
 
         arrayList.add(new Student("Ivan"));
 
         // When:
-        ArrayList<Student>.Iterator iterator = arrayList.getIterator();
+        uaslp.enginering.labs.list.Iterator iterator = arrayList.getIterator();
 
         // Then:
         assertNotNull(iterator);

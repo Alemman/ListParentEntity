@@ -1,32 +1,32 @@
 package uaslp.enginering.labs.list;
 import uaslp.enginering.labs.model.*;
 
-public class Node<E> {
+public class Node {
     private Object field;
-    private Node<E> previous;
-    private Node<E> Next;
+    private Node previous;
+    private Node Next;
 
-    public void setElement(E element){
+    public void setElement(Student element){
         field = element;
     }
 
-    public E getElement(){
-        return (E)field;
+    public Student getElement(){
+        return (Student)field;
     }
 
-    public void setPrevious(Node<E> previous){
+    public void setPrevious(Node previous){
         this.previous = previous;
     }
 
-    public Node<E> getPrevious(){
+    public Node getPrevious(){
         return previous;
     }
 
-    public void setNext(Node<E> Next){
+    public void setNext(Node Next){
         this.Next = Next;
     }
 
-    public Node<E> getNext(){
+    public Node getNext(){
         return Next;
     }
 }

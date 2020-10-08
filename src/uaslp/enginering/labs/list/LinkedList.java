@@ -2,19 +2,16 @@ package uaslp.enginering.labs.list;
 
 import uaslp.enginering.labs.model.Student;
 
-public class LinkedList<E> {
-    private Node<E> front;
-    private Node<E> tail;
+public class LinkedList implements List {
+    private Node front;
+    private Node tail;
     private int count;
 
-    public enum InsertPosition {
-        BEFORE,
-        AFTER
-    }
 
-    public class Iterator {
+
+    public class Iterator implements uaslp.enginering.labs.list.Iterator {
         private int index;
-        private Node<E> list;
+        private Node list;
 
         public Iterator(){
             list = front;
@@ -23,8 +20,8 @@ public class LinkedList<E> {
             return index < count;
         }
 
-        public E next() {
-            E nextStudent;
+        public Student next() {
+            Student nextStudent;
 
             if(list == null) {
                 nextStudent = null;
@@ -37,12 +34,12 @@ public class LinkedList<E> {
                     list = null;
                 index++;
             }
-            return (E)nextStudent;
+            return (Student) nextStudent;
         }
     }
 
-    public void add(E element) {
-        Node<E> newNode = new Node<>();
+    public void add(Student element) {
+        Node newNode = new Node();
         newNode.setElement(element);
         if(count == 0){
             front = tail = newNode;
@@ -55,8 +52,8 @@ public class LinkedList<E> {
         count++;
     }
 
-    public void delete(E element) {
-        Node<E> iteratorNode = front;
+    public void delete(Student element) {
+        Node iteratorNode = front;
 
         while (!(iteratorNode.getElement().equals(element)) && iteratorNode != null){
             iteratorNode = iteratorNode.getNext();
@@ -93,9 +90,9 @@ public class LinkedList<E> {
     }
 
     private void iteratorDelete(int index){
-        Node<E> iteratorNode = front;
-        Node<E> previousNode;
-        Node<E> nextNode;
+        Node iteratorNode = front;
+        Node previousNode;
+        Node nextNode;
         int countIterator = 0;
 
         if(index == 0){
@@ -127,8 +124,8 @@ public class LinkedList<E> {
         return count;
     }
 
-    public E getAt(int index) {
-        Node<E> iteratorNode = front;
+    public Student getAt(int index) {
+        Node iteratorNode = front;
         int countIterator = 0;
 
         while (countIterator < index && iteratorNode.getNext() != null){
@@ -136,12 +133,12 @@ public class LinkedList<E> {
             countIterator++;
         }
 
-        return (E)iteratorNode.getElement();
+        return (Student) iteratorNode.getElement();
     }
 
-    public void insert(E reference, E newStudent, InsertPosition insertPosition) {
-        Node<E> iteratorNode = front;
-        Node<E> newNode = new Node<>();
+    public void insert(Student reference, Student newStudent, InsertPosition insertPosition) {
+        Node iteratorNode = front;
+        Node newNode = new Node();
         newNode.setElement(newStudent);
 
         while ((iteratorNode.getElement().equals(reference)) != true && iteratorNode != null){
@@ -156,7 +153,7 @@ public class LinkedList<E> {
         count++;
     }
 
-    private void reAssign(Node<E> iteratorNode,Node<E> newNode,InsertPosition insertPosition){
+    private void reAssign(Node iteratorNode,Node newNode,InsertPosition insertPosition){
         if(insertPosition.equals(InsertPosition.BEFORE)){
             if(iteratorNode.getPrevious() != null) {
                 newNode.setPrevious(iteratorNode.getPrevious());

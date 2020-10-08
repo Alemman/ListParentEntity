@@ -11,7 +11,7 @@ public class LinkedListTest {
     @Test
     public void givenNewList_whenSize_thenZeroIsReturned() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         // When:
         int size = list.size();
@@ -23,7 +23,7 @@ public class LinkedListTest {
     @Test
     public void givenNewList_whenAdd_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student student = new Student("Ivan");
 
         // When:
@@ -37,7 +37,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenDeleteFirst_thenElementIsDeleted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
         list.add(new Student("Israel"));
@@ -55,7 +55,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenDeleteLast_thenElementIsDeleted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
         list.add(new Student("Israel"));
@@ -73,7 +73,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenDeleteMiddle_thenElementIsDeleted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
         list.add(new Student("Israel"));
@@ -91,7 +91,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenDeleteNegative_thenDoesNothing() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
         list.add(new Student("Israel"));
@@ -110,7 +110,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenDeleteOutOfSize_thenDoesNothing() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
         list.add(new Student("Israel"));
@@ -129,7 +129,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtBeginningBefore_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Ivan");
 
         list.add(reference);
@@ -150,7 +150,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtEndBefore_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Francisco");
 
         list.add(new Student("Ivan"));
@@ -171,7 +171,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtMiddleBefore_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Israel");
 
         list.add(new Student("Ivan"));
@@ -192,7 +192,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtBeginningAfter_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Ivan");
 
         list.add(reference);
@@ -213,7 +213,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtEndAfter_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Francisco");
 
         list.add(new Student("Ivan"));
@@ -234,7 +234,7 @@ public class LinkedListTest {
     @Test
     public void givenAListWith3Elements_whenInsertAtMiddleAfter_thenElementIsInserted() {
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
         Student reference = new Student("Israel");
 
         list.add(new Student("Ivan"));
@@ -255,10 +255,10 @@ public class LinkedListTest {
     @Test
     public void givenEmptyList_whenGetIterator_thenIteratorIsEmpty(){
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         // When:
-        LinkedList<Student>.Iterator iterator = list.getIterator();
+        LinkedList.Iterator iterator = list.getIterator();
 
         // Then:
         assertNotNull(iterator);
@@ -269,13 +269,13 @@ public class LinkedListTest {
     @Test
     public void givenListWithOneElement_whenGetIterator_thenIteratorHasOneNext(){
         // Given:
-        LinkedList<Student> list = new LinkedList<>();
+        LinkedList list = new LinkedList();
 
         list.add(new Student("Ivan"));
 
         // When:
         //LinkedList<Student>.Iterator iterator = list.getIterator();
-        LinkedList<Student>.Iterator iterator = list.getIterator();
+        LinkedList.Iterator iterator = list.getIterator();
         // Then:
         assertNotNull(iterator);
         assertTrue(iterator.hasNext());
